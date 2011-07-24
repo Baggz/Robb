@@ -23,7 +23,7 @@ $ npm install robb
 Releases are available for download from GitHub.
 
 * [**Development** (8 KB uncompressed)](https://github.com/downloads/Baggz/Robb/robb.js)
-* [**Production** (1.27 KB compressed and gzipped)](https://github.com/downloads/Baggz/Robb/robb.min.js)
+* [**Production** (1.29 KB compressed and gzipped)](https://github.com/downloads/Baggz/Robb/robb.min.js)
 
 # Methods
 
