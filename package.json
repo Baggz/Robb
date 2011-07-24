@@ -1,9 +1,9 @@
 {
 
   "name": "robb",
-  "description": "Simple type checker.",
+  "description": "Simple type checker in JavaScript.",
   "version": "0.2.0",
-  "author": "František Hába <hello@frantisekhaba.co>",
+  "author": "František Hába <hello@frant"isekhaba.co>",
 
   "devDependencies": {
     "nodeunit": "0.5.1"
@@ -28,18 +28,21 @@
     "isEmail",
     "isEmpty",
     "isEven",
+    "isFinite",
     "isFunction",
     "isInt",
     "isIp",
     "isIpv4",
     "isIpv6",
     "isLowercase",
+    "isNaN",
     "isNegative",
     "isNull",
     "isNumber",
     "isObject",
     "isOdd",
     "isPercentage",
+    "isPort",
     "isPositive",
     "isPrime",
     "isRegExp",
