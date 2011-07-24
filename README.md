@@ -22,7 +22,7 @@ $ npm install robb
 
 Releases are available for download from GitHub.
 
-* [**Development** (10 KB uncompressed)](https://github.com/downloads/Baggz/Robb/robb.js)
+* [**Development** (8 KB uncompressed)](https://github.com/downloads/Baggz/Robb/robb.js)
 * [**Production** (1.27 KB compressed and gzipped)](https://github.com/downloads/Baggz/Robb/robb.min.js)
 
 # Methods
@@ -39,16 +39,21 @@ Releases are available for download from GitHub.
 * isEmail
 * isEmpty
 * isEven
+* isFinite
 * isFunction
 * isInt
 * isIp
+* isIpv4
+* isIpv6
 * isLowercase
+* isNaN
 * isNegative
 * isNull
 * isNumber
 * isObject
 * isOdd
 * isPercentage
+* isPort
 * isPositive
 * isPrime
 * isRegExp
