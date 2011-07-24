@@ -3,7 +3,7 @@
   "name": "robb",
   "description": "Simple type checker in JavaScript.",
   "version": "0.2.0",
-  "author": "František Hába <hello@frant"isekhaba.co>",
+  "author": "František Hába <hello@frantisekhaba.com>",
 
   "devDependencies": {
     "nodeunit": "0.5.1"
