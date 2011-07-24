@@ -2,7 +2,9 @@
 
   // Will speed up references
   var slice = Array.prototype.slice,
-      toString = Object.prototype.toString;
+      unshift = Array.prototype.unshift,
+      toString = Object.prototype.toString,
+      hasOwnProperty = Object.prototype.hasOwnProperty;
 
   /**
    * Robb
@@ -17,7 +19,7 @@
   /**
    * Types
    *
-   * List of types we are able to detect using regular expressions.
+   * List of type detection functions.
    */
   var types = {
     isFunction: function(item) {
@@ -39,10 +41,10 @@
       return /^(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?((?:(?:[-\w\d{1-3}]+\.)+(?:com|org|cat|coop|int|pro|tel|xxx|net|gov|mil|biz|info|mobi|name|aero|jobs|edu|co\.uk|ac\.uk|it|fr|tv|museum|asia|local|travel|[a-z]{2})?)|((\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)(\.(\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)){3}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$ |\/.,*:;=]|%[a-f\d]{2})*)?$/.test( item );
     },
     isAlpha: function(item) {
-      return /^[a-zA-Z]+$/.test( item );
+      return types.isString( item ) && /^[a-zA-Z]+$/.test( item );
     },
     isAlphanumeric: function(item) {
-      return /^[a-zA-Z0-9]+$/.test( item );
+      return ( types.isString( item ) && /^[a-zA-Z0-9]+$/.test( item ) ) || types.isNumber( item );
     },
     isIpv4: function(item) {
       return /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test( item );
@@ -54,10 +56,10 @@
       return types.isIpv4 || types.isIpv6;
     },
     isLowercase: function(item) {
-      return /^[a-z0-9]+$/.test( item );
+      return types.isString( item ) && /^[a-z0-9]+$/.test( item );
     },
     isUppercase: function(item) {
-      return /^[A-Z0-9]+$/.test( item );
+      return types.isString( item ) && /^[A-Z0-9]+$/.test( item );
     },
     isDecimal: function(item) {
       return /^[0-9]+(\.[0-9]{1,2})?$/.test( item );
@@ -72,7 +74,7 @@
       return /^-?[0-9]{0,2}(\.[0-9]{1,2})?$|^-?(100)(\.[0]{1,2})?$/.test( item );
     },
     isPositive: function(item) {
-      return /^\d+$/.test( item );
+      return types.isNumber( item ) && /^\d+$/.test( item );
     },
     isPort: function(item) {
       return /\:\d+/.test(item);    
@@ -102,7 +104,7 @@
       return item && item.test && item.exec;  
     },
     isArguments: function(item) {
-      return item && item.hasOwnProperty('callee');
+      return item && hasOwnProperty.call(item, 'callee');
     },
     isEmpty: function(item) {
 
@@ -119,7 +121,7 @@
       // Objects
       if ( types.isObject( item ) ) {
         for ( var key in item ) {
-          if ( item.hasOwnProperty( key ) ) {
+          if ( hasOwnProperty.call( item, key ) ) {
             return false;
           }
         }
@@ -146,7 +148,7 @@
         return false;
       }
 
-      // If passed argument is less than 1, returns false
+      // If passed argument is less than or equals 1, returns false
       if ( item <= 1 ) {
         return false;
       }
@@ -172,10 +174,16 @@
 
     },
     isNegative: function(item) {
-      return !types.isPositive( item );
+      return types.isNumber( item ) && !/^\d+$/.test( item );
     },
     isWindow: function(item) {
       return toString.call( item ) === '[object global]' && 'setInterval' in item && 'setTimeout' in item;
+    },
+    isNaN: function(item) {
+      return window.isNAN( item );
+    },
+    isFinite: function(item) {
+      return window.isFinite( item );
     }
   };
 
@@ -186,18 +194,27 @@
    * @param {functio} fn
    */
   var generateMethod = function(method, fn) {
+
     Robb.prototype[ method ] = function() {
+
+      // Make sure that at least one argument was provided
       if ( arguments.length === 0 ) {
         return false;
       }
+
+      // Converts arguments to regular array
       var list = slice.call( arguments );
+
+      // Goes through the list of arguments
       return list.every(fn);
+
     };
+
   };
 
-  // Goes through all available methods
+  // Goes through all available type detection functions
   for ( var type in types ) {
-    if ( types.hasOwnProperty( type ) ) {
+    if ( hasOwnProperty.call( types, type ) ) {
       generateMethod( type, types[type] );
     }
   }
