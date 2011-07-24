@@ -2,12 +2,12 @@
 var Robb = require('../src/robb.js');
 
 /**
- * Test ‘isWindow’
+ * Test ‘isFunction’
  *
  * @param {object} test
  */
-exports.isWindow = function(test) {
-  
+exports.isFunction = function(test) {
+
   // Skip
   test.done();
 

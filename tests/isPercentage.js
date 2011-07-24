@@ -17,6 +17,8 @@ exports.isPercentage = function(test) {
     49,
     70,
     7,
+    8.92,
+    12.12,
     31,
     73,
     10,

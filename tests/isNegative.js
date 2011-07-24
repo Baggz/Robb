@@ -15,12 +15,28 @@ exports.isNegative = function(test) {
     -1.5,
     -3.89212
   ];
-  
+
   negative.forEach(function(num) {
     var result = Robb.isNegative( num );
     test.strictEqual( result, true );
   });
   
+  var fails = [
+    null,
+    undefined,
+    '',
+    1,
+    2,
+    3,
+    4,
+    5
+  ];
+
+  fails.forEach(function(num) {
+    var result = Robb.isNegative( num );
+    test.strictEqual( result, false );
+  });
+
   test.done();
 
 };

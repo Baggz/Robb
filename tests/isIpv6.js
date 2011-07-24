@@ -2,13 +2,12 @@
 var Robb = require('../src/robb.js');
 
 /**
- * Test ‘isWindow’
+ * Test ‘isIpv6’
  *
  * @param {object} test
  */
-exports.isWindow = function(test) {
-  
-  // Skip
+exports.isIpv6 = function(test) {
+
   test.done();
 
 };

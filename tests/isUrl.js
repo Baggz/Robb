@@ -307,6 +307,8 @@ exports.isUrl = function(test) {
       '/index.html'
     ];
 
+    // TODO: Hashes?
+
     names.forEach(function(name) {
 
       var result = Robb.isUrl( name )
@@ -319,6 +321,22 @@ exports.isUrl = function(test) {
 
     });
 
+  });
+  
+  var fails = [
+    'example',
+    'example..',
+    '.example.',
+    'htp://example.com',
+    'http:\\example.com',
+    'http:/example.com',
+    null,
+    undefined
+  ];
+  
+  fails.forEach(function(fail) {
+    var result = Robb.isUrl( fail )
+    test.strictEqual( result, false );
   });
 
   test.done();

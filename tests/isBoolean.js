@@ -24,7 +24,9 @@ exports.isBoolean = function(test) {
     2,
     null,
     {},
-    []
+    [],
+    null,
+    undefined
   ];
 
   fails.forEach(function(arr) {

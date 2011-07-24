@@ -19,7 +19,9 @@ exports.isDate = function(test) {
     {},
     [],
     function() {},
-    'Hello!'
+    'Hello!',
+    undefined,
+    ''
   ];
   
   fails.forEach(function(item) {

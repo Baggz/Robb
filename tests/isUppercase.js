@@ -20,6 +20,18 @@ exports.isUppercase = function(test) {
     test.strictEqual( result, true );
   });
 
+  var fails = [
+    [],
+    [null],
+    [undefined],
+    ['a', null, 'a']
+  ];
+  
+  fails.forEach(function(input) {
+    var result = Robb.isUppercase.apply( Robb, input );
+    test.strictEqual( result, false );
+  });
+
   test.done();
 
 };

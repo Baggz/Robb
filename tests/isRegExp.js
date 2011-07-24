@@ -8,7 +8,7 @@ var Robb = require('../src/robb.js');
  */
 exports.isRegExp = function(test) {
 
-    
+  test.strictEqual( Robb.isRegExp( new RegExp() ), true );
   test.done();
 
 };

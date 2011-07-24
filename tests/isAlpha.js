@@ -30,12 +30,18 @@ exports.isAlpha = function(test) {
     ['123', 'lorme ipsum', 'abc'],
     ['abc', 'lorme ipsum', 'abc'],
     ['lorme ipsum', 'lorme ipsum', 'lorme ipsum'],
+    ['lorem', '', 'lorem'],
+    [''],
+    ['', ''],
+    ['abc', null, 'abc'],
+    ['abc', undefined, 'abc'],
+    []
   ];
 
   fails.forEach(function(item) {
     var result = Robb.isAlpha.apply( Robb, item );
     test.strictEqual( result, false );
-  });  
+  });
 
   test.done();
 

@@ -8,14 +8,7 @@ var Robb = require('../src/robb.js');
  */
 exports.isString = function(test) {
 
-  var strings = [
-  
-  ];
-  
-  var fails = [
-
-  ];
-  
+  // Skip
   test.done();
-    
+
 };

@@ -30,7 +30,7 @@ exports.isNumber = function(test) {
     var result = Robb.isNumber( num );
     test.strictEqual( result, true );
   });
-  
+
   test.done();
 
 };

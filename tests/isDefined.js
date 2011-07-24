@@ -18,6 +18,9 @@ exports.isDefined = function(test) {
     var res = Robb.isDefined( def );
     test.strictEqual( res, true );
   });
+  
+  var res = Robb.isDefined( undefined );
+  test.strictEqual( res, false );
 
   test.done();
 

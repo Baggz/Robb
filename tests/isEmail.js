@@ -297,11 +297,24 @@ exports.isEmail = function(test) {
     'my.email.my.email'
   ];
 
+  var fails = [
+    'info mail'
+  ];
+
   domains.forEach(function(domain) {
+    
     names.forEach(function(name) {
       var res = Robb.isEmail( name + '@' + 'example' + domain );
       test.strictEqual( res, true );
     });
+
+    fails.forEach(function(name) {
+      var res1 = Robb.isEmail( name + '@' + 'example' + domain );
+      var res2 = Robb.isEmail( 'info@' + 'example');
+      test.strictEqual( res1, false );
+      test.strictEqual( res2, false );
+    });
+    
   });
 
   test.done();

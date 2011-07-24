@@ -24,6 +24,7 @@ exports.isArray = function(test) {
   var fails = [
     '',
     null,
+    undefined,
     {},
     function() {}
   ];

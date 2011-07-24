@@ -17,6 +17,8 @@ exports.isAlphanumeric = function(test) {
     ['Abc'],
     ['123'],
     ['123', 'abc', 'ab23'],
+    [123],
+    [1, 2, 3]
   ];
 
   strings.forEach(function(item) {
@@ -27,7 +29,11 @@ exports.isAlphanumeric = function(test) {
   var fails = [
     [' '],
     ['lorem 123'],
-    ['12 3', 'abc', 'ab23']
+    ['12 3', 'abc', 'ab23'],
+    ['12 3', '', 'ab23'],
+    ['abc', null, 'abc'],
+    ['abc', undefined, 'abc'],
+    []
   ];
 
   fails.forEach(function(item) {

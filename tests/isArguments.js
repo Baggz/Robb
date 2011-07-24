@@ -20,7 +20,9 @@ exports.isArguments = function(test) {
     {},
     { foo: 'bar' },
     'Lorem',
-    function() {}
+    function() {},
+    null,
+    undefined
   ];
   
   fails.forEach(function(item) {
