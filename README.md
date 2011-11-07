@@ -22,10 +22,12 @@ $ npm install robb
 
 Releases are available for download from GitHub.
 
-* [**Development** (8 KB uncompressed)](https://github.com/downloads/Baggz/Robb/robb.js)
-* [**Production** (1.29 KB compressed and gzipped)](https://github.com/downloads/Baggz/Robb/robb.min.js)
+| **Version** | **Description** | **Size** | **Action** |
+|:------------|:----------------|:---------|:-----------|
+| `robb.js` | *uncompressed, with comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/src/robb.js) |
+| `robb.min.js` | *compressed, without comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/dist/robb.min.js) |
 
-# Methods
+# Documentation
 
 * isAlpha
 * isAlphanumeric
@@ -67,7 +69,7 @@ Releases are available for download from GitHub.
 # Running Tests
 
 ```
-$ nodeunit tests/
+$ npm tests/
 ```
 
 # License
