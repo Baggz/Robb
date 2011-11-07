@@ -66,7 +66,8 @@
   },
 
   "bugs": {
-    "web": "https://github.com/Baggz/Robb/issues"
+    "url": "https://github.com/Baggz/Robb/issues",
+    "email": "hello@frantisekhaba.com"
   },
 
   "licenses": [ 
@@ -74,6 +75,10 @@
       "type": "MIT",
       "url": "https://github.com/Baggz/Robb/blob/master/README.md"
     }
-  ]
+  ],
+
+  "scripts": {
+    "test" : "nodeunit tests/"
+  }
 
 }
