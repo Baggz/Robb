@@ -69,7 +69,7 @@ Releases are available for download from GitHub.
 # Running Tests
 
 ```
-$ npm tests/
+$ npm test
 ```
 
 # License
