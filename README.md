@@ -2,6 +2,13 @@
 
 Robb is simple type checker in JavaScript. It was originally designed for use with [Node.js](http://nodejs.org/), but you can use it also in the browser.
 
+### Features
+
+* Robb has **no dependencies**
+* **AMD compatible**, you can load it via [RequireJS](https://github.com/jrburke/requirejs)
+* Lightweight
+* Fully **documented**
+
 ## Example
 
 ```javascript
