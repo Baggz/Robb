@@ -5,11 +5,11 @@ Robb is simple type checker in JavaScript. It was originally designed for use wi
 ## Example
 
 ```javascript
-Robb.isNuber( 123 ); // => true
-Robb.isArray( [1, 2, 3] ); // => true
-Robb.isBoolean( false ); // => true
-Robb.isEmail( 'hello@example.com' ); // => true
-Robb.isEmail( 'hello1@example.com', 'hello2@example.com' ); // => true
+Robb.isNuber(123); // => true
+Robb.isArray([1, 2, 3]); // => true
+Robb.isBoolean(false); // => true
+Robb.isEmail('hello@example.com'); // => true
+Robb.isEmail('hello1@example.com', 'hello2@example.com'); // => true
 ```
 
 ## Download
