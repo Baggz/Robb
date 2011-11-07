@@ -220,8 +220,12 @@
   }
 
   // Exports
-  if (typeof module !== 'undefined' && module.exports) {
+  if ( typeof module !== 'undefined' && module.exports ) {
     module.exports = new Robb();
+  } else if ( typeof define !== 'undefined' ) {
+    define(function() {
+      return new Robb();
+    });
   } else {
     this.Robb = new Robb();
   }
