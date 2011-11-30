@@ -1,5 +1,7 @@
 # Robb
 
+[![Build Status](https://secure.travis-ci.org/Baggz/Robb.png)](http://travis-ci.org/Baggz/Robb)
+
 Robb is simple type checker in JavaScript. It was originally designed for use with [Node.js](http://nodejs.org/), but you can use it also in the browser.
 
 ### Features
