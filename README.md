@@ -2,6 +2,13 @@
 
 [![Build Status](https://secure.travis-ci.org/Baggz/Robb.png)](http://travis-ci.org/Baggz/Robb)
 
+* [Example](#example)
+* [Download](#download)
+* [Usage](#usage)
+* [Methods](#methods)
+* [Tests](#tests)
+* [License](#license)
+
 Robb is simple type checker in JavaScript. It was originally designed for use with [Node.js](http://nodejs.org/), but you can use it also in the browser.
 
 ### Features
@@ -11,17 +18,18 @@ Robb is simple type checker in JavaScript. It was originally designed for use wi
 * Lightweight
 * Fully **documented**
 
-## Example
+<a name="example"></a>
+# Example
 
 ```javascript
 Robb.isNuber(123); // => true
 Robb.isArray([1, 2, 3]); // => true
 Robb.isBoolean(false); // => true
-Robb.isEmail('hello@example.com'); // => true
 Robb.isEmail('hello1@example.com', 'hello2@example.com'); // => true
 ```
 
-## Download
+<a name="download"></a>
+# Download
 
 To install **Robb**, use [NPM](http://npmjs.org/).
 
@@ -36,7 +44,40 @@ Releases are available for download from GitHub.
 | `robb.js` | *uncompressed, with comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/src/robb.js) |
 | `robb.min.js` | *compressed, without comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/dist/robb.min.js) |
 
-# Documentation
+<a name="usage"></a>
+# Usage
+
+## Browser
+
+```
+<script src="robb.js"></script>
+```
+
+## Node.js, RingoJS, Narwhal
+
+```
+var platform = require('platform');
+```
+
+## RequireJS
+
+```javascript
+// Configuration options, the path should not include the .js extension
+require.config({
+  paths: {
+    "robb": "path/to/robb"
+  }
+});
+
+// Load Robb
+require(['robb'], function(robb) {
+
+  // Do something...
+
+});
+```
+<a name="methods"></a>
+# Methods
 
 * isAlpha
 * isAlphanumeric
@@ -75,12 +116,14 @@ Releases are available for download from GitHub.
 * isUrl
 * isWindow
 
-# Running Tests
+<a name="tests"></a>
+# Tests
 
 ```
 $ npm test
 ```
 
+<a name="license"></a>
 # License
 
 (The MIT License)
