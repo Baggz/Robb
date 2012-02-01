@@ -2,6 +2,8 @@
 
 [![Build Status](https://secure.travis-ci.org/Baggz/Robb.png)](http://travis-ci.org/Baggz/Robb)
 
+### Contents
+
 * [Example](#example)
 * [Download](#download)
 * [Usage](#usage)
@@ -55,7 +57,7 @@ Releases are available for download from GitHub.
 
 ## Node.js, RingoJS, Narwhal
 
-```
+```javascript
 var platform = require('platform');
 ```
 
