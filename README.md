@@ -43,8 +43,8 @@ Releases are available for download from GitHub.
 
 | **Version** | **Description** | **Size** | **Action** |
 |:------------|:----------------|:---------|:-----------|
-| `robb.js` | *uncompressed, with comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/src/robb.js) |
-| `robb.min.js` | *compressed, without comments* | 1 KB | [Download](https://raw.github.com/Baggz/Robb/master/dist/robb.min.js) |
+| `robb.js` | *uncompressed, with comments* | 5.49 KB (1.67 KB gzipped) | [Download](https://raw.github.com/Baggz/Robb/master/src/robb.js) |
+| `robb.min.js` | *compressed, without comments* | 3.72 KB (1.27 KB gzipped) | [Download](https://raw.github.com/Baggz/Robb/master/dist/robb.min.js) |
 
 <a name="usage"></a>
 # Usage
