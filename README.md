@@ -58,7 +58,7 @@ Releases are available for download from GitHub.
 ## Node.js, RingoJS, Narwhal
 
 ```javascript
-var platform = require('platform');
+var robb = require('robb');
 ```
 
 ## RequireJS
