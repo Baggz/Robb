@@ -2,12 +2,14 @@
 
   "name": "robb",
   "description": "Simple type checker in JavaScript.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "František Hába <hello@frantisekhaba.com>",
 
   "devDependencies": {
     "nodeunit": "0.6.4"
   },
+
+  "main": "dist/robb.min.js",
 
   "keywords": [
     "utils",
